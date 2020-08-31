@@ -1,0 +1,48 @@
+﻿@*@model List<SchoolManagementSystem.Areas.Accounts.ViewModels.AccMngViewModel>*@
+
+
+@using X.PagedList.Mvc.Core;
+
+@model X.PagedList.IPagedList<SchoolManagementSystem.Areas.Accounts.ViewModels.AccMngViewModel>
+
+
+<p class="h2" style="text-align:center;">Fee List<br /><div style="border-bottom:1px solid #686868"></div> </p>
+
+<table class="table table-striped table-responsive">
+    <thead>
+        <tr>
+            <th class="h3">
+                Serial No
+            </th>
+            <th class=" h3  ">
+                Class
+            </th>
+            <th class=" h3  ">
+                Fee Amount
+            </th>
+            <th class=" h3  ">
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class=" h4  ">@item.serialnoVM</td>
+                <td class=" h4  ">@item.ClassName</td>
+                <td class=" h4  ">@item.feeamountVM</td>
+                <td class=" h4  ">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a asp-action="UpdateFeeList" asp-controller="Accounts" asp-area="Accounts" asp-route-ufl="@item.PrimaryKey"><i class="fa fa-pencil-square" style="font-size:25px;color:green"></i></a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+Page(@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount)
+
+@Html.PagedListPager(Model, page => Url.Action("FeeList", new { page = page }))

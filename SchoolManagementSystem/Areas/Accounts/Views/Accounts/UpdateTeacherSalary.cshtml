@@ -1,0 +1,36 @@
+﻿
+
+@model SchoolManagementSystem.Areas.Accounts.ViewModels.TeacherSalaryViewModel
+
+
+
+    @ViewBag.msg
+    <form style="margin-top:20px;padding:20px;background-color:ghostwhite; box-shadow:0 5px 15px #686868;border-radius:10px 15px;" asp-area="Accounts" asp-controller="Accounts" asp-action="UpdateTeacherSalary" method="post">
+        <h1 style="text-align:center;font-family:'Century Gothic';font-weight:bold;">Teacher's Salary</h1>
+        <hr style="width:70%;" />
+
+        <div class="row" style="padding:5px;">
+            @*row 1*@
+            <input type="hidden"asp-for="PrimaryKey" />
+            <input type="hidden"asp-for="desigidVM" />
+
+            @*<div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-2 col-lg-4 col-lg-offset-2">
+                <div class="form-group">
+                    <label>Designation:</label>
+                    <select class="form-control" asp-for="desigidVM" asp-items="@(new SelectList(ViewBag.td,"DesigId","DesigName")) "></select>
+                </div>
+            </div>*@
+            <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
+                <div class="form-group">
+                    <label>Enter Salary:</label>
+                    <input class="form-control" type="number" placeholder="Amount" asp-for="salaryVM" />
+                </div>
+            </div>
+        </div>
+        <div class="row" style="padding:10px;">
+            @*row 2*@
+            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2" style="float:right;">
+                <button class="btn btn-primary" type="submit" style="float:right;">Update</button>
+            </div>
+        </div>
+    </form>

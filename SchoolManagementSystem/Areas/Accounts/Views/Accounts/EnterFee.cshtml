@@ -1,0 +1,44 @@
+﻿@model SchoolManagementSystem.Areas.Accounts.ViewModels.FeeSubViewModel
+
+
+
+
+
+
+
+    <form style="margin-top:20px;padding:20px;background-color:ghostwhite; box-shadow:0 5px 15px #686868;border-radius:10px 15px;" asp-area="Accounts" asp-controller="Accounts" asp-action="SubmitFee"method="post">
+        <h1 style="text-align:center;font-family:'Century Gothic';font-weight:bold;">Submit Fee</h1>
+        <hr style="width:70%;" />
+
+        <div class="row" style="padding:10px;">
+            @*row 1*@
+            <div class="col-xs-12 col-sm-8 col-md-4 col-md-offset-3 col-lg-4 col-lg-offset-3">
+                <div class="form-group">
+                    @ViewBag.msg4
+                    <label>Enter Fee Amount</label>
+                    <input type="number" class="form-control" placeholder="Amount" asp-for="totalfeeVM" />
+                    <input type="hidden" asp-for="classidVM" />
+                    <input type="hidden" asp-for="studentidVM" />
+                    <input type="hidden" asp-for="dueamountVM" />
+                    <input type="hidden" asp-for="ShouldtotalfeeVM" />
+                    <input type="hidden" asp-for="dateVM" />
+
+                </div>
+            </div>
+            @*<div class="col-xs-12 col-sm-8 col-md-4 col-md-offset-2 col-lg-4 col-lg-offset-2">
+                <div class="form-group">
+                    @ViewBag.msg5
+                    @ViewBag.msg6
+                    <select class="form-control"asp-for="extrafeeamountVM"asp-items="@(new SelectList(ViewBag.v,"SerialNo","ExtraFeeTitle"))">
+
+                    </select>
+                </div>
+            </div>*@
+        </div>
+        <div class="row" style="padding:10px;">
+            @*row 2*@
+            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2" style="float:right;">
+                <button class="btn btn-primary" type="submit" style="float:right;">Submit</button>
+            </div>
+        </div>
+    </form>

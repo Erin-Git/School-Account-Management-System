@@ -1,0 +1,97 @@
+﻿@model SchoolManagementSystem.Areas.Accounts.ViewModels.FeeSubViewModel
+
+
+
+
+<form style="margin-top:20px;padding:20px;background-color:ghostwhite; box-shadow:0 5px 15px #686868;border-radius:10px 15px;" asp-area="Accounts" asp-controller="Accounts" asp-action="SubmitFee" method="post">
+    <h1 style="text-align:center;font-family:'Century Gothic';font-weight:bold;font-size:50px;">Fee Submission</h1>
+    <hr style="width:70%;" />
+
+    <h3 style="text-align:center;font-family:'Century Gothic';font-style:italic;">Student's Fee Details</h3>
+    <hr style="width:50%;font-weight:bolder;text-align:center;" />
+    <div class="form-group">
+        <div class="row">
+            <input type="hidden" asp-for="classidVM" />
+            <input type="hidden" asp-for="studentidVM" />
+            <input type="hidden" asp-for="dueamountVM" />
+            <input type="hidden" asp-for="ShouldtotalfeeVM" />
+            <input type="hidden" asp-for="feeamountVM" />
+            <input type="hidden" asp-for="extrafeeamountVM" />
+            <input type="hidden" asp-for="dateVM" />
+            <input type="hidden" asp-for="amountofmonth" />
+            <input type="hidden" asp-for="lastmonth" />
+            <input type="hidden" asp-for="currentmonth" />
+            <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-3">
+                <table class="table table-responsive">
+                    <tbody>
+
+                        <tr>
+                            <td style="text-align:center">Student's ID:</td>
+                            <td>@Model.studentidVM</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center">Student's Name:</td>
+                            <td>@Model.studentnameVM</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center">Last Active On:</td>
+                            <td>@ViewBag.showdate</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center">Class:</td>
+                            <td>@Model.classnameVM</td>
+                        </tr>
+
+                        <tr>
+                            <td style="text-align:center">Fee Amount:</td>
+                            <td>@Model.feeamountVM</td>
+                        </tr>
+
+                        <tr>
+                            <td style="text-align:center">Due Amount:</td>
+                            <td>@Model.dueamountVM</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center">Extra Fee:</td>
+                            <td>
+                                <select name="exfee" asp-for="extrafeeamountVM" id="extra" asp-items="@(new SelectList(ViewBag.v,"ExtraFeeAmount","ExtraFeeTitle"))"></select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center">Total:</td>
+                            <td id="tot">@Model.totalfeeVM</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center">Enter Amount:</td>
+                            <td><input type="number" asp-for="totalfeeVM" class="form-control" style="width:20%;" id="feeinp" /></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center">Action:</td>
+                            <td><button class="btn btn-primary" type="submit">Pay Fee</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+@section Scripts{
+
+    <script type="text/javascript">
+
+        $("#extra").change(function () {
+
+            var extrafee = $("#extra").val();
+            var total = '@Model.totalfeeVM';
+            var final = Number(total) + Number(extrafee);
+            $("[name*='totalfeeVM']").val(final);
+            $("[name*='extrafeeamountVM']").val(extrafee);
+            $("#tot").html(final);
+
+        });
+        
+    </script>
+
+}

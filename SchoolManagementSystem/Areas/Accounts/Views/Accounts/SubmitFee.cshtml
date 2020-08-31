@@ -1,0 +1,22 @@
+﻿@model SchoolManagementSystem.Areas.Accounts.ViewModels.FeeSubViewModel
+
+
+
+
+<form style="margin-top:20px;padding:20px;background-color:ghostwhite; box-shadow:0 5px 15px #686868;border-radius:10px 15px;" asp-area="Accounts" asp-controller="Accounts" asp-action="EnterFee" method="post">
+    <h1 style="text-align:center;font-family:'Century Gothic';font-weight:bold;font-size:50px;">Fee Submission</h1>
+    <hr style="width:70%;" />
+    @ViewBag.msg4
+    
+    <div class="row" style="padding:10px;">
+        @*row 2*@
+        <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2" style="float:right;">
+            <input type="hidden"asp-for="studentidVM" />
+            <input type="hidden"asp-for="classidVM" />
+            @*<input type="hidden"asp-for="dateVM" />*@
+            <button class="btn btn-primary" type="submit" style="float:right;">Back</button>
+        </div>
+    </div>
+</form>
+
+

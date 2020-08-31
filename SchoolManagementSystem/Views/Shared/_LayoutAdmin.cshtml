@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewData["Title"] - SchoolManagementSystem</title>
+
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <environment include="Development">
+
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/css/uikit.min.css" />
+
+        <!-- UIkit JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit-icons.min.js"></script>
+
+
+
+        <link rel="stylesheet" href="~/AdminLayout/bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="~/AdminLayout/bower_components/font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" href="~/AdminLayout/dist/css/AdminLTE.min.css">
+        <link rel="stylesheet" href="~/AdminLayout/dist/css/skins/_all-skins.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+
+
+
+
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/AdminLayout/bower_components/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/AdminLayout/dist/css/AdminLTE.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/AdminLayout/bower_components/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="~/AdminLayout/dist/css/skins/_all-skins.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    </environment>
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+
+  
+    <div class="wrapper">
+
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="#" class="logo" style="background-color:#1a2226">
+
+                <span class="logo-lg"><b>Admin Panel</b></span>
+               
+                
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" style="background-color:#1a2226">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+
+                         <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
+                                <img src="~/AdminLayout/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                <span class="hidden-xs">Alexander Pierce</span>
+                            </a>
+                            <ul class="dropdown-menu" >
+
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="~/AdminLayout/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                                    <p>
+                                        Alexander Pierce - Web Developer
+                                        <small>Member since Nov. 2012</small>
+                                    </p>
+                                </li>
+                                <!-- Menu Body -->
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                           
+                        </li> 
+                        
+                        <!-- Control Sidebar Toggle Button -->
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="~/AdminLayout/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-left info">
+                        <p>Alexander Pierce</p>
+                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                    </div>
+                </div>
+
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="header">MAIN NAVIGATION</li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-home"></i> <span>Admin Home</span>
+
+                        </a>
+
+                    </li>
+                    
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-user"></i>
+                            <span>Manage Users</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a asp-area="Admin" asp-action="AddUser" asp-controller="Home"><i class="fa fa-check"></i> Add user</a></li>
+                            <li><a a asp-area="Admin" asp-action="AddRole" asp-controller="Home"><i class="fa fa-check"></i> Add Role</a></li>
+                            <li><a a asp-area="Admin" asp-action="RoleList" asp-controller="Home"> <i class="fa fa-check"></i>RoleList</a></li>
+                            <li><a href="#"><i class="fa fa-check"></i> Collapsed Sidebar</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-user"></i>
+                            <span>Manage Teacher</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a asp-area="Admin" asp-action="NewTeacher" asp-controller="AdmissionOfficer"><i class="fa fa-check"></i> New Teacher</a></li>
+                            <li><a asp-area="Admin" asp-action="TeacherList" asp-controller="AdmissionOfficer"><i class="fa fa-check"></i> Teacher's List</a></li>
+                            <li><a href="#"><i class="fa fa-check"></i> Fixed</a></li>
+                            <li><a href="#"><i class="fa fa-check"></i> Collapsed Sidebar</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-graduation-cap"></i>
+                            <span>Manage Students</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a asp-area="Admin" asp-action="AddStudent" asp-controller="AdmissionOfficer"><i class="fa fa-check"></i> Add Student</a></li>
+                            <li><a asp-area="Admin" asp-action="StudentList" asp-controller="AdmissionOfficer"><i class="fa fa-check"></i> Student List</a></li>
+                            <li><a href="#"><i class="fa fa-check"></i> Fixed</a></li>
+                            <li><a href="#"><i class="fa fa-check"></i> Collapsed Sidebar</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-users"></i>
+                            <span>Academic & Classes</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a asp-area="Admin" asp-action="AddClass" asp-controller="Home" ><i class="fa fa-check"></i> New Class</a></li>
+                            <li><a asp-area="Admin" asp-action="ClassList" asp-controller="Home"><i class="fa fa-check"></i> Class List</a></li>
+                            <li><a  asp-area="Admin" asp-action="AddSection" asp-controller="Home"><i class="fa fa-check"></i> Manage Section</a></li>
+                            
+                            <li><a href="#"><i class="fa fa-check"></i> Collapsed Sidebar</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-window-maximize"></i>
+                            <span>Subjects</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a asp-area="Admin" asp-action="AddSubject" asp-controller="Home"><i class="fa fa-check"></i> Manage Subject</a></li>
+                            <li><a asp-area="Admin" asp-action="SubjectList" asp-controller="Home"><i class="fa fa-check"></i> Subject List</a></li>
+                            <li><a asp-area="Admin" asp-action="SubjectAssignedToTeacher" asp-controller="Home"><i class="fa fa-check"></i> Subject Assigned To Teacher</a></li>
+                            <li><a href="#"><i class="fa fa-check"></i> Collapsed Sidebar</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-map"></i>
+                            <span>Class Routine</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-check"></i> Top Navigation</a></li>
+                            <li><a href="#"><i class="fa fa-check"></i> Boxed</a></li>
+                            <li><a href="#"><i class="fa fa-check"></i> Fixed</a></li>
+                            <li><a href="#"><i class="fa fa-check"></i> Collapsed Sidebar</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-list-alt"></i>
+                            <span>Attendance</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-check"></i> Top Navigation</a></li>
+                            <li><a href="#"><i class="fa fa-check"></i> Boxed</a></li>
+                            <li><a href="#"><i class="fa fa-check"></i> Fixed</a></li>
+                            <li><a href="#"><i class="fa fa-check"></i> Collapsed Sidebar</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-book"></i>
+                            <span>Exam</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-check"></i> Top Navigation</a></li>
+                            <li><a href="#"><i class="fa fa-check"></i> Boxed</a></li>
+                            <li><a href="#"><i class="fa fa-check"></i> Fixed</a></li>
+                            <li><a href="#"><i class="fa fa-check"></i> Collapsed Sidebar</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-cogs"></i>
+                            <span>Settings</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-check"></i> Top Navigation</a></li>
+                            <li><a href="#"><i class="fa fa-check"></i> Boxed</a></li>
+                            <li><a href="#"><i class="fa fa-check"></i> Fixed</a></li>
+                            <li><a href="#"><i class="fa fa-check"></i> Collapsed Sidebar</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-calendar"></i>
+                            <span>Session :2019</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-check"></i> Session :2019</a></li>
+                            <li><a href="#"><i class="fa fa-check"></i> Session :2019</a></li>
+                            <li><a href="#"><i class="fa fa-check"></i> Session :2019</a></li>
+                            <li><a href="#"><i class="fa fa-check"></i> Session :2019</a></li>
+                        </ul>
+                    </li>
+
+
+
+
+
+
+
+                </ul>
+            </section>
+
+        </aside>
+
+
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Dashboard
+                    <small>Control panel</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li class="active">Dashboard</li>
+                </ol>
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+
+
+                @RenderBody()
+
+
+
+
+
+
+
+            </section>
+
+
+
+
+
+
+
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 2.4.0
+            </div>
+            <strong>Copyright &copy; 2019  <a href="#">Hello frnds</a>.</strong> All rights
+            reserved.
+        </footer>
+
+
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <!-- ./wrapper -->
+
+
+
+
+    <environment include="Development">
+        <script src="~/AdminLayout/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="~/AdminLayout/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="~/AdminLayout/dist/js/adminlte.min.js"></script>
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <!-- Compiled and minified JavaScript -->
+       
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                asp-fallback-src="~/AdminLayout/bower_components/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/AdminLayout/bower_components/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/AdminLayout/dist/js/adminlte.min.js" asp-append-version="true"></script>
+       
+       
+    
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+
+
+
+</body>
+</html>

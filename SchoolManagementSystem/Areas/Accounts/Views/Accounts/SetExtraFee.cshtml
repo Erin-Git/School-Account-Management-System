@@ -1,0 +1,41 @@
+﻿@model SchoolManagementSystem.Areas.Accounts.ViewModels.ExtraFeeViewModel
+
+
+
+    @*@ViewBag.msg1
+    @ViewBag.msg2*@
+    <form style="margin-top:20px;padding:20px;background-color:ghostwhite;box-shadow:0 5px 15px #686868;border-radius:10px 15px;"asp-area="Accounts"asp-controller="Accounts"asp-action="SetExtraFee"method="post">
+        <h1 style="text-align:center;font-family:'Century Gothic';font-weight:bold;">Extra Fee</h1>
+        <hr style="width:70%;" />
+        <div class="row" style="padding:10px;">
+            @*row 1*@
+            <div class="col-xs-12 col-sm-12 col-md-3 col-md-offset-2 col-lg-3 col-lg-offset-1">
+                <div class="form-group">
+                    <label for="classid">Select Class:</label>
+                    <select class="form-control"asp-for="classidVM"asp-items="@(new SelectList(ViewBag.vwvexf,"ClassId","ClassName"))">
+                        <span class="text-danger field-validation-valid" asp-validation-for="classidVM"></span>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label for="feetitle">Enter Fee Title:</label>
+                    <input type="text" class="form-control" placeholder="Fee Title" asp-for="extrafeetitleVM" />
+                    <span class="text-danger field-validation-valid" asp-validation-for="extrafeetitleVM"></span>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label for="feeamount">Enter Fee Amount:</label>
+                    <input class="form-control" type="number" placeholder="Fee Amount" asp-for="extrafeeamountVM" />
+                    <span class="text-danger field-validation-valid" asp-validation-for="extrafeeamountVM"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="padding:10px;">
+            @*row 2*@
+            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2" style="float:right;">
+                <button class="btn btn-primary" type="submit" style="float:right;">Submit</button>
+            </div>
+        </div>
+    </form>

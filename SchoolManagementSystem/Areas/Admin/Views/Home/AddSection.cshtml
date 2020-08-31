@@ -1,0 +1,48 @@
+﻿@model SchoolManagementSystem.Areas.Admin.AdminVM.SectionViewModel
+
+
+@*Erin*@
+
+
+<div class="container">
+    @if(ViewBag.SMS!=null)
+    {
+    <div class="alert alert-danger">
+        <strong>@ViewBag.SMS</strong> 
+    </div>
+    }
+    <form style="margin-top:20%;padding:20px;background-color:ghostwhite; box-shadow:0 5px 15px #686868;border-radius:10px 15px;" asp-area="Admin" asp-controller="Home" asp-action="AddSection" method="post">
+        <h1 style="text-align:center;font-family:'Century Gothic';font-weight:bold;">Add New Section</h1>
+        <hr style="width:70%;" />
+
+        <div class="row" style="padding:10px;">
+            @*row 1*@
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group">
+                    <label for="secname">Enter Section Name:</label>
+                    <input type="text" class="form-control" placeholder="Section Name" asp-for="secnameVM" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group">
+                    <label for="seccapacity">Enter Section Capacity:</label>
+                    <input type="number" class="form-control" placeholder="Section Capacity" asp-for="seccapacityVM" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group">
+                    <label for="clsid">Select Class:</label>
+                    <select asp-for="clsidVM" asp-items="@(new SelectList(ViewBag.Class,"ClassId","ClassName")) " class="form-control"></select>
+
+                </div>
+            </div>
+        </div>
+        <div class="row" style="padding:10px;">
+            @*row 2*@
+            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2" style="float:right;">
+                <button class="btn btn-primary" type="submit" style="float:right;">Submit</button>
+            </div>
+        </div>
+
+    </form>
+</div>

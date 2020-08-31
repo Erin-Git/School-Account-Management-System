@@ -1,0 +1,58 @@
+﻿@model SchoolManagementSystem.Areas.Accounts.ViewModels.SalaryDetailsViewModel
+
+
+    <form style="margin-top:20px;padding:20px;background-color:ghostwhite; box-shadow:0 5px 15px #686868;border-radius:10px 15px;" asp-area="Accounts" asp-controller="Accounts" asp-action="GiveSalary" method="post">
+        <h1 style="text-align:center;font-family:'Century Gothic';font-weight:bold;font-size:50px;">Salary Details</h1>
+        <hr style="width:70%;" />
+
+        <h3 style="text-align:center;font-family:'Century Gothic';font-style:italic;">About Teacher's Salary</h3>
+        <hr style="width:50%;font-weight:bolder;text-align:center;" />
+        <div class="form-group">
+            <div class="row">
+
+                <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+                    <table class="table table-responsive">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center">Teacher's ID:</td>
+                                <td>
+                                    @Model.teacheridVM
+                                    <input type="hidden" asp-for="teacheridVM" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center">Teacher's Name:</td>
+                                <td>@Model.teachernameVM
+                                <input type="hidden" asp-for="teachernameVM" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center">Designation:</td>
+                                <td>
+                                    @Model.designameVM
+                                    <input type="hidden" asp-for="desigidVM" />
+                               </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center">Salary Amount:</td>
+                                <td>
+                                    @Model.salaryVM
+                                    <input type="hidden" asp-for="salaryVM" />
+                                    <input type="hidden" asp-for="dateVM" />
+                                </td>
+                            </tr>
+                           
+                            @*<tr>
+                                    <td style="text-align:center">Status:</td>
+                                    <td>Not Paid</td>
+                                </tr>*@
+                            <tr>
+                                <td style="text-align:center">Action:</td>
+                                <td><button class="btn btn-primary" type="submit">Give Salary</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </form>

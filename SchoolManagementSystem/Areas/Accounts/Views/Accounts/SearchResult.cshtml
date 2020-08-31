@@ -1,0 +1,67 @@
+﻿@model List<SchoolManagementSystem.Areas.Accounts.ViewModels.FeeSubViewModel>
+
+@*@using X.PagedList.Mvc.Core;
+
+    @model X.PagedList.IPagedList<SchoolManagementSystem.Areas.Accounts.ViewModels.AccMngViewModel>*@
+
+<div>
+    <form class="form-inline" asp-area="Accounts" asp-controller="Accounts" asp-action="SearchResult" method="post">
+        <div class="form-group">
+            
+                <label>Select Class:</label>
+
+                <select asp-items="@(new SelectList(ViewBag.Class,"ClassId","ClassName")) " class="form-control" name="cid2"></select>
+
+           
+        </div>
+        <button class="btn btn-primary" type="submit" >Search More</button>
+
+    </form>
+</div>
+<p class="h2" style="text-align:center;">Fee List<br /><div style="border-bottom:1px solid #686868"></div> </p>
+<div style="overflow-x:auto;">
+    <table class="table table-striped table-responsive" >
+        <thead>
+            <tr>
+                <th class="h3">
+                    Serial No
+                </th>
+                <th class=" h3  ">
+                    Class
+                </th>
+                <th class=" h3  ">
+                    Student ID
+                </th>
+                <th class=" h3  ">
+                    Student Name
+                </th>
+                <th class=" h3  ">
+                    Fee Amount
+                </th>
+                <th class=" h3  ">
+                    Due Amount
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class=" h4  ">@item.serialnoVM</td>
+                    <td class=" h4  ">@item.classnameVM</td>
+                    <td class=" h4  ">@item.studentidVM</td>
+                    <td class=" h4  ">@item.studentnameVM</td>
+                    <td class=" h4  ">@item.totalfeeVM</td>
+                    <td class=" h4  ">@item.dueamountVM</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+
+@*Page(@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount)
+
+    @Html.PagedListPager(Model, page => Url.Action("FeeList", new { page = page }))*@

@@ -1,0 +1,186 @@
+﻿
+@model SchoolManagementSystem.Areas.Admin.AdminVM.TeacherViewModel
+
+<div class="container" style="margin-top:5%">
+
+    <form style="padding:20px;background-color:ghostwhite; box-shadow:0 5px 15px #686868;border-radius:10px 15px;" asp-area="Admin" asp-controller="AdmissionOfficer" asp-action="UpdateTeacher" method="post">
+        <h1 style="text-align:center;font-family:'Century Gothic';font-weight:bold;">Add New Teacher</h1>
+        <hr style="width:70%;" />
+        <h3 style="text-align:center;font-family:'Century Gothic';">Teacher's Information</h3>
+        <hr style="width:50%;" />
+
+        <div class="row" style="padding:5px;">
+
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label for="teachername">Enter Name:</label>
+                    <input type="text" class="form-control" placeholder="Name of Teacher" asp-for="TcrnameVM" />
+                    <input type="hidden"asp-for="TcridVM" />
+                    <input type="hidden"asp-for="DocSLVM" />
+                    <input type="hidden"asp-for="QlSLVM" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label for="designation">Enter Designation:</label>
+                    <input type="text" class="form-control" placeholder="Designation" asp-for="TcrdesigVM" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label for="contact">Enter Contact No.:</label>
+                    <input type="number" class="form-control" placeholder="Phone/Mobile" asp-for="TcrphoneVM" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label for="e-mail">Enter E-mail Address:</label>
+                    <input type="email" class="form-control" placeholder="E-mail" asp-for="TcremailVM" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="padding:5px;">
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label for="dob">Enter Date of Birth:</label>
+                    <input type="date" class="form-control" placeholder="DOB" asp-for="TcrdobVM" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label for="gender">Select Gender:</label>
+                    <select class="form-control">
+                        <option>Select Gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label for="bg">Enter Blood Group:</label>
+                    <input type="text" class="form-control" placeholder="BG" asp-for="TcrbgVM" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label for="nationality">Enter Nationality:</label>
+                    <input type="text" class="form-control" placeholder="Nationality" asp-for="TcrnationVM" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="padding:5px;">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="form-group">
+                    <label for="caddress">Enter Current Address:</label>
+                    <textarea class="form-control" cols="5" rows="6" placeholder="Current Address" asp-for="TcrcaddrssVM"></textarea>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="form-group">
+                    <label for="paddress">Enter Permanent Address:</label>
+                    <textarea class="form-control" cols="5" rows="6" placeholder="Permanent Address" asp-for="TcrpaddrssVM"></textarea>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="form-group">
+                    <label for="photo">Enter a Photo:</label>
+                    <input type="file" style="cursor:pointer" asp-for="TcrphotoVM" />
+                </div>
+            </div>
+        </div>
+
+
+        <hr style="width:80%;" />
+
+        <h3 style="text-align:center;font-family:'Century Gothic';">Teacher's Qualification Details</h3>
+        <hr style="width:50%;" />
+
+        <div class="row" style="padding:10px;">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group">
+                    <label for="sscins">Enter SSC Institution:</label>
+                    <input type="text" class="form-control" placeholder="Institution(SSC)" asp-for="TcrqsscinsVM" />
+                </div>
+                <div class="form-group">
+                    <label for="sscgpa">Enter SSC GPA:</label>
+                    <input type="number" class="form-control" placeholder="GPA(SSC)" asp-for="TcrqsscgradeVM" />
+                </div>
+                <div class="form-group">
+                    <label for="sscyear">Enter passing year of SSC:</label>
+                    <input type="number" class="form-control" placeholder="Year(SSC)" asp-for="TcrqsscyearVM" />
+                </div>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group">
+                    <label for="hscins">Enter HSC Institution:</label>
+                    <input type="text" class="form-control" placeholder="Institution(HSC)" asp-for="TcrqhscinsVM" />
+                </div>
+                <div class="form-group">
+                    <label for="hscgpa">Enter HSC GPA:</label>
+                    <input type="number" class="form-control" placeholder="GPA(HSC)" asp-for="TcrqhscgradeVM" />
+                </div>
+                <div class="form-group">
+                    <label for="hscyear">Enter passing year of HSC:</label>
+                    <input type="number" class="form-control" placeholder="Year(HSC)" asp-for="TcrqhscyearVM" />
+                </div>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group">
+                    <label for="honsins">Enter Hons Institution:</label>
+                    <input type="text" class="form-control" placeholder="Institution(Hons)" asp-for="TcrqhonsinsVM" />
+                </div>
+                <div class="form-group">
+                    <label for="honscgpa">Enter Hons CGPA:</label>
+                    <input type="number" class="form-control" placeholder="CGPA(Hons)" asp-for="TcrqhonsgradeVM" />
+                </div>
+                <div class="form-group">
+                    <label for="honsyear">Enter passing year of Hons:</label>
+                    <input type="number" class="form-control" placeholder="Year(Hons)" asp-for="TcrqhonsyearVM" />
+                </div>
+            </div>
+        </div>
+
+        <hr style="width:80%;" />
+
+
+        <h3 style="text-align:center;font-family:'Century Gothic';padding:10px;">Submitted Documents:</h3>
+        <hr style="width:50%;" />
+        <div class="row" style="padding:5px;">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-md-offset-2 col-lg-3 col-lg-offset-2">
+                <input type="checkbox" asp-for="TcrdocsubssccrtfctVM" /><label>&nbsp;SSC Certificate</label>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <input type="checkbox" asp-for="TcrdocsubhsccrtfctVM" /><label>&nbsp;HSC Certificate</label>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <input type="checkbox" asp-for="TcrdocsubhonscrtfctVM" /><label>&nbsp;Hons Certificate</label>
+            </div>
+        </div>
+
+
+        <div class="row" style="padding:5px;">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-md-offset-2 col-lg-3 col-lg-offset-2">
+                <input type="checkbox" asp-for="TcrdocsubsscmarkVM" /><label>&nbsp;SSC Marksheet</label>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <input type="checkbox" asp-for="TcrdocsubhscmarkVM" /><label>&nbsp;HSC Marksheet</label>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <input type="checkbox" asp-for="TcrdocsubhonsmarkVM" /><label>&nbsp;Hons Marksheet</label>
+            </div>
+        </div>
+        <hr style="width:80%;" />
+        <div class="row" style="padding:5px;">
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" style="float:right;">
+                <button class="btn btn-primary" type="submit" style="float:right;">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

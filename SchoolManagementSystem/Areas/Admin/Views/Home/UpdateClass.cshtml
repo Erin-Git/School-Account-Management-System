@@ -1,0 +1,26 @@
+﻿
+@model SchoolManagementSystem.Areas.Admin.AdminVM.ClassViewModel
+
+<div class="container">
+
+    <div class="row" style="margin-top:15%">
+        <div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-12 jumbotron" style="background-color:lightgray;box-shadow:0 5px 15px #686868">
+
+
+            <form asp-area="Admin" asp-action="UpdateClass" asp-controller="Home" method="post">
+                <div class="form-group">
+                    <input asp-for="clsidVM" type="hidden" />
+                    <label asp-for="clsnameVM" class="h3"></label>
+                    <input asp-for="clsnameVM" class="form-control" />
+                    <span asp-validation-for="clsnameVM"></span>
+                </div>
+                <div class="form-group ">
+                    <input type="submit" class="btn btn-success " value="Update" />
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</div>
+

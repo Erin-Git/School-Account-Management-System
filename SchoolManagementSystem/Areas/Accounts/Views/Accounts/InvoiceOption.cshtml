@@ -1,0 +1,33 @@
+﻿@model SchoolManagementSystem.Areas.Accounts.ViewModels.FeeSubViewModel
+
+
+<form asp-area="Accounts" asp-controller="Accounts"asp-action="PrintInvoice"method="post">
+    
+    <div class="container" style="margin-top:20vh;padding:80px;background-color:ghostwhite; box-shadow:0 5px 15px #686868;border-radius:10px 15px;width:60%;">
+        <div class="row" style="justify-content:center;display:flex;">
+            <div>
+                <p style="text-align:center;font-family:'Century Gothic';font-weight:bold;font-size:30px;
+  overflow: auto;" class="text-justify">You have successfully paid the amount !</p>
+                <p style="text-align:center;font-family:'Century Gothic';font-weight:bold;font-size:20px;">Would you like to print the invoice?</p>
+            </div>
+        </div>
+        <div class="row" style="justify-content:center;display:flex;">
+            <div>
+                <a class="btn btn-primary" asp-action="EnterStdntInfo">No,Go Back</a>
+                <button class="btn btn-success" type="submit">Yes</button>
+            </div>
+        </div>
+        <input type="hidden" asp-for="studentidVM" />
+        <input type="hidden" asp-for="studentnameVM" />
+        <input type="hidden" asp-for="classnameVM" />
+        <input type="hidden" asp-for="feeamountVM" />
+        <input type="hidden" asp-for="dueamountVM" />
+        <input type="hidden" asp-for="extrafeeamountVM" />
+        <input type="hidden" asp-for="totalfeeVM" />
+        <input type="hidden" asp-for="dt"/>
+        <input type="hidden" asp-for="inwords" />
+        <input type="hidden" asp-for="amountofmonth" />
+        <input type="hidden" asp-for="lastmonth" />
+        <input type="hidden" asp-for="currentmonth" />
+    </div>
+</form>

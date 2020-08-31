@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace SchoolManagementSystem.Areas.Admin.Models
+{
+    public class Teacher
+    {
+        [Key]
+        public Int64 TeacherId { get; set; }
+        public string TeacherName { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = @"{0:dd\/MM\/yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime TeacherDOB { get; set; }
+
+        public string TeacherBG { get; set; }
+        public DateTime TeacherJD { get; set; }
+        public string TeacherGender { get; set; }
+        public string TeacherNationality { get; set; }
+        public string TeacherPAddress { get; set; }
+        public string TeacherCAddress { get; set; }
+        public Int64 TeacherPhoneNo { get; set; }
+        public string TeacherEmail { get; set; }
+        public string TeacherPhoto { get; set; }
+        public String TeacherDesignation { get; set; }
+        public Int64 DesigId { get; set; }
+
+    }
+}

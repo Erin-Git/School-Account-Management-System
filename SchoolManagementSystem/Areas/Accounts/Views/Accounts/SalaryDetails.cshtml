@@ -1,0 +1,39 @@
+﻿
+
+
+@model List<SchoolManagementSystem.Areas.Accounts.ViewModels.TeacherSalaryViewModel>
+
+
+
+    <p class="h2" style="text-align:center;">Subject List<br /><div style="border-bottom:1px solid #686868"></div> </p>
+
+    <table class="table table-striped table-responsive">
+        <thead>
+            <tr>
+                <th class="h3">
+                    Serial No
+                </th>
+                <th class=" h3 ">
+                    Teacher's Name
+                </th>
+                <th class=" h3 ">
+                    Designation
+                </th>
+                <th class=" h3 ">
+                    Salary Amount
+                </th>               
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class=" h4  ">@item.serialnoVM</td>
+                    <td class=" h4  ">@item.tcrnameVM</td>
+                    <td class=" h4  ">@item.designameVM</td>
+                    <td class=" h4  ">@item.salaryVM</td>                  
+                </tr>
+            }
+        </tbody>
+    </table>
